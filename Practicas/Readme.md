@@ -111,6 +111,13 @@ Reglas estrictas:
 - Prueba en el jardín del Tecnológico, grabada en el [video](https://youtube.com/shorts/PawcdZoOtOs).
 - Salida del bot: [`Terminal/Salida del bot.txt`](Terminal/Salida%20del%20bot.txt)
 
+![Evidencias de prueba](Resultados/Evidencias%20de%20prueba.png)
+
+| Foto | Respuesta del bot |
+|------|-------------------|
+| Foto 1 del arbusto (12:00) | 🔎 *Lantana camara* · 🌱 Productor · ♻️ Fuente de néctar para polinizadores; planta ornamental y cobertura |
+| Foto 2 del mismo arbusto (12:01) | 🔎 *Tagetes erecta* · 🌱 Productor · ♻️ Proporciona alimento y refugio a insectos; ayuda a polinización y mejora suelo. |
+
 ## Reporte
 
 Incluye: [`Reporte/Reporte de la práctica.pdf`](Reporte/Reporte%20de%20la%20pr%C3%A1ctica.pdf)
@@ -120,12 +127,13 @@ Incluye: [`Reporte/Reporte de la práctica.pdf`](Reporte/Reporte%20de%20la%20pr%
 - El escenario es instantáneo: Telegram avisa a Make por webhook en cuanto llega el mensaje, y la respuesta tarda solo unos segundos.
 - El Router usa el campo `message.photo` para decidir la ruta. Así el Agente de IA solo se ejecuta cuando hay imagen, lo que ahorra operaciones de Make.
 - El *system prompt* hace que la respuesta sea corta (máximo 35 palabras) y siempre con el mismo formato, ideal para leerse en el chat.
+- La clasificación trófica fue correcta (**productor**) en las dos pruebas, pero el bot dio **dos nombres de especie distintos** para el mismo arbusto (*Lantana camara* y *Tagetes erecta*). El modelo gpt-5-nano es rápido y barato, pero menos preciso para distinguir especies parecidas; el nombre debe tomarse como sugerencia y confirmarse con otra fuente.
 
 ## Conclusiones
 
-La práctica permitió aplicar la automatización a un tema de Desarrollo Sustentable. Con un bot de Telegram, un Router con filtros y un Agente de IA en Make.com se construyó una herramienta que identifica organismos del jardín del Tecnológico y los clasifica según su nivel trófico. En la prueba, el bot identificó correctamente una *Lantana camara* como **productor** y describió su función como fuente de néctar para polinizadores.
+La práctica permitió aplicar la automatización a un tema de Desarrollo Sustentable. Con un bot de Telegram, un Router con filtros y un Agente de IA en Make.com se construyó una herramienta que identifica organismos del jardín del Tecnológico y los clasifica según su nivel trófico. En las pruebas, el bot clasificó correctamente la planta fotografiada como **productor** y explicó su función para los polinizadores.
 
-También se reforzó la importancia de los filtros del Router: sin ellos, el Agente de IA se ejecutaría aunque el mensaje no trajera imagen. Además, un buen *system prompt* es clave para que la IA dé respuestas breves, consistentes y en español. Este tipo de herramienta acerca a los estudiantes al reconocimiento práctico de los organismos que forman un ecosistema.
+También se observó una limitación: el mismo arbusto recibió dos nombres de especie diferentes en dos fotos seguidas, lo que enseña que la respuesta de una IA debe verificarse con otras fuentes. Además, se reforzó la importancia de los filtros del Router: sin ellos, el Agente de IA se ejecutaría aunque el mensaje no trajera imagen. También, un buen *system prompt* es clave para que la IA dé respuestas breves y en español. Este tipo de herramienta acerca a los estudiantes al reconocimiento práctico de los organismos que forman un ecosistema.
 
 ## Resultados
 
