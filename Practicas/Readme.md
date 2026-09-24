@@ -46,15 +46,6 @@ En lugar de un circuito, se documenta el **escenario de Make** (6 módulos y un 
 
 ![Escenario en Make](Diagrama/Escenario%20Ecosistema.png)
 
-| # | Módulo | Función |
-|---|--------|---------|
-| 3 | Telegram Bot — Watch Updates | Disparador: se activa cada vez que llega un mensaje al bot (webhook). |
-| 4 | Router | Divide el flujo en dos rutas según si el mensaje trae foto. |
-| 6 | Telegram Bot — Send a Text Message | Ruta sin foto: pide al alumno que envíe una foto. |
-| 5 | Telegram Bot — Download a File | Ruta con foto: descarga la imagen de mayor resolución. |
-| 8 | Make AI Agent — Run an agent | Analiza la imagen con el *system prompt* y genera la respuesta. |
-| 9 | Telegram Bot — Send a Text Message | Envía la respuesta de la IA al mismo chat. |
-
 **Filtros del Router:**
 
 - **Tiene Foto** (entre el Router 4 y el módulo 5): `{{3.message.photo}}` — *exist*
@@ -65,29 +56,6 @@ En lugar de un circuito, se documenta el **escenario de Make** (6 módulos y un 
 El "código" de esta práctica es el escenario de Make exportado como blueprint:
 
 - [`Codigo/Ecosistema.blueprint.json`](Codigo/Ecosistema.blueprint.json): se puede importar en Make con **Import Blueprint**.
-- [`Codigo/system_prompt.txt`](Codigo/system_prompt.txt): instrucciones del Agente de IA.
-
-```text
-Eres un asistente educativo que identifica organismos en fotos tomadas
-por estudiantes en el jardín del Tecnológico, para la materia de
-Desarrollo Sustentable, tema "El Ecosistema".
-
-Cuando recibas una imagen, responde SIEMPRE en este formato, sin texto
-adicional antes o después:
-
-🔎 [nombre probable del organismo]
-🌱 [Productor / Consumidor / Descomponedor]
-♻️ [rol en el ecosistema en máximo 15 palabras]
-
-Si la imagen no muestra un organismo vivo, responde únicamente:
-"❌ No identifico un organismo. Intenta con una planta, insecto u otro
-ser vivo."
-
-Reglas estrictas:
-- Máximo 35 palabras en total.
-- Sin introducciones, sin despedidas, sin explicaciones extra.
-- Responde siempre en español.
-```
 
 ## Video del funcionamiento
 
@@ -100,11 +68,6 @@ Reglas estrictas:
 - Salida del bot: [`Terminal/Salida del bot.txt`](Terminal/Salida%20del%20bot.txt)
 
 ![Evidencias de prueba](Resultados/Evidencias%20de%20prueba.png)
-
-| Foto | Respuesta del bot |
-|------|-------------------|
-| Foto 1 del arbusto (12:00) | 🔎 *Lantana camara* · 🌱 Productor · ♻️ Fuente de néctar para polinizadores; planta ornamental y cobertura |
-| Foto 2 del mismo arbusto (12:01) | 🔎 *Tagetes erecta* · 🌱 Productor · ♻️ Proporciona alimento y refugio a insectos; ayuda a polinización y mejora suelo. |
 
 ## Reporte
 
