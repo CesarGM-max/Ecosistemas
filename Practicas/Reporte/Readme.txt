@@ -1,4 +1,3 @@
 Aquí se sube el reporte general de la práctica
 
-- Reporte de la práctica.pdf : reporte completo (introducción, objetivos, marco teórico,
-  material, desarrollo módulo por módulo, resultados, observaciones y conclusiones).
+- Reporte de la práctica.pdf : datos generales de la práctica y conexiones del escenario de Make.
