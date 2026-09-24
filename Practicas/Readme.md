@@ -46,18 +46,6 @@ En lugar de un circuito, se documenta el **escenario de Make** (6 módulos y un 
 
 ![Escenario en Make](Diagrama/Escenario%20Ecosistema.png)
 
-![Diagrama de flujo](Diagrama/Diagrama%20de%20flujo.png)
-
-```mermaid
-flowchart LR
-    A[Alumno envía mensaje] --> B[Telegram Bot 3<br/>Watch Updates]
-    B --> C{Router 4}
-    C -- "1st · Tiene Foto<br/>message.photo existe" --> D[Telegram Bot 5<br/>Download a File]
-    D --> E[Make AI Agent 8<br/>Run an agent]
-    E --> F[Telegram Bot 9<br/>Envía la respuesta de la IA]
-    C -- "2nd · No tiene Foto<br/>message.photo no existe" --> G[Telegram Bot 6<br/>Pide una foto]
-```
-
 | # | Módulo | Función |
 |---|--------|---------|
 | 3 | Telegram Bot — Watch Updates | Disparador: se activa cada vez que llega un mensaje al bot (webhook). |
@@ -143,4 +131,4 @@ Este documento contiene los casos de prueba, las respuestas del bot y el anális
 
 - Reporte técnico: [`Reporte/Reporte de la práctica.pdf`](Reporte/Reporte%20de%20la%20pr%C3%A1ctica.pdf)
 - Blueprint del escenario: [`Codigo/Ecosistema.blueprint.json`](Codigo/Ecosistema.blueprint.json)
-- Diagramas: [`Diagrama/`](Diagrama/)
+- Captura del escenario: [`Diagrama/Escenario Ecosistema.png`](Diagrama/Escenario%20Ecosistema.png)
