@@ -1,0 +1,21 @@
+SALIDA DEL BOT DE TELEGRAM — Escenario "Ecosistema" (Make.com)
+==============================================================
+
+[Caso 1] El alumno envía una foto de un organismo  (ruta 1st: "Tiene Foto")
+Flujo: Telegram Bot [3] -> Router [4] -> Telegram Bot [5] -> Make AI Agent [8] -> Telegram Bot [9]
+Prueba registrada en el video (https://youtube.com/shorts/PawcdZoOtOs):
+
+  Alumno: [foto de un arbusto con flores rojo-anaranjadas en el jardín del Tecnológico]
+  Bot:    🔎 Lantana camara
+          🌱 Productor
+          ♻️ Fuente de néctar para polinizadores; planta ornamental y cobertura
+
+[Caso 2] El alumno envía solo texto, sin foto  (ruta 2nd: "No tiene Foto")
+Flujo: Telegram Bot [3] -> Router [4] -> Telegram Bot [6]
+Respuesta fija configurada en el módulo [6]:
+
+  Bot:    Envíame una foto 📷 del organismo (planta, insecto, hongo, etc.) para poder identificarlo
+
+[Caso 3] El alumno envía una foto que no es un ser vivo  (ruta 1st, respuesta según el system prompt)
+
+  Bot:    ❌ No identifico un organismo. Intenta con una planta, insecto u otro ser vivo.
