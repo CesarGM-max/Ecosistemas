@@ -56,6 +56,7 @@ En lugar de un circuito, se documenta el **escenario de Make** (6 módulos y un 
 El "código" de esta práctica es el escenario de Make exportado como blueprint:
 
 - [`Codigo/Ecosistema.blueprint.json`](Codigo/Ecosistema.blueprint.json): se puede importar en Make con **Import Blueprint**.
+- [`Codigo/Explicacion del blueprint.md`](Codigo/Explicacion%20del%20blueprint.md): explicación en texto del blueprint, módulo por módulo.
 
 ## Video del funcionamiento
 
